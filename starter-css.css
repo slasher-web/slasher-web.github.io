@@ -1,8 +1,14 @@
 h1{
     color: red;
     font-size: 75px;
-}   
+    font-weight: 900;
+    
+    }   
 h2{
-    color: blue;
+    color:  blue ;
     font-size: 60px;
+}
+
+body{
+    background-color : gold;
 }
