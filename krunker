@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/globals.js"></script>
+</head>
+<body>
+<div id="app">
+<table>
+    <tr class="first-tr">
+        <td>
+            <h1>{{ h1 }}</h1>
+        </td>
+        <td class="games-list">
+            <div class="aboslute">
+                <div class="aboslute">
+                    <img src="icons/game.png" width="24" height="24" alt="" id="icon24">
+                </div>
+                <div class="sound-label">
+                    <img :src="sound_icon" alt="Sound status">
+                    <span>Sound&nbsp;&nbsp;</span>
+                    <label for="sound" class="switch"><input type="checkbox" id="sound" v-on:change="soundSwitch"><span class="slider round"></span></label>
+                </div>
+
+            </div>
+            <img src="img/GamesUnblocked.svg" width="256" height="37" alt="Games Unblocked">
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="play-area">
+
+            <div v-if="selected==='Masked Forces'">
+                <iframe src="https://unblockeds-games.weebly.com/masked-forces.html" width="820" height="680"></iframe>
+            </div>
+            <div v-if="selected==='Krunker'">
+                <iframe src="https://krunker.io/" width="820" height="620"></iframe>
+            </div>
+
+            <div v-if="selected==='Build Royale'">
+                <iframe src="https://buildroyale.io/" width="820" height="620"></iframe>
+            </div>
+
+            <div v-if="selected==='Slither.io'">
+                <iframe src="https://slither.io/" width="820" height="620"></iframe>
+            </div>
+
+            <div v-if="selected==='Hole.io'">
+                <iframe src="https://hole-io.com/" width="820" height="620"></iframe>
+            </div>
+
+            <div v-if="selected==='TankWars.io'">
+                <iframe src="https://tankwars.io/" width="820" height="620"></iframe>
+            </div>
+
+            <div v-if="selected==='War Brokers'">
+                <iframe src="https://warbrokers.io/game3d.php?nick=guest" width="820" height="620"></iframe>
+            </div>
+
+            <div v-if="selected==='Surviv.io'">
+                <iframe src="http://surviv.io/" width="820" height="620"></iframe>
+            </div>
+
+            <div v-if="selected==='Shell Shockers'">
+                <iframe src="https://shellshock.io/" width="820" height="620"></iframe>
+            </div>
+
+            <div v-if="selected==='Crazy Roll 3D'">
+                <iframe width="900" height="620" frameborder="0" scrolling="no" tabindex="0" allowfullscreen="" src="https://www.crazygames.com/game/crazy-roll-3d"></iframe>
+            </div>
+        </td>
+
+        <td valign="top" class="games-list">
+            <ul>
+                <li v-for="item in games">
+                    <a :href="'#'+item.replace(/\s+/g, '+')" v-on:click="(selected=item),h1=selected+' Game'"><img :src="'preview/'+item+'.png'" height="100" alt="">
+                        <br>{{ item }}</a>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
